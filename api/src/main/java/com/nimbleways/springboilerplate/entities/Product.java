@@ -1,5 +1,6 @@
 package com.nimbleways.springboilerplate.entities;
 
+import com.nimbleways.springboilerplate.enumeration.ProductType;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -21,11 +22,12 @@ public class Product {
     @Column(name = "lead_time")
     private Integer leadTime;
 
-    @Column(name = "available")
-    private Integer available;
+    @Column(name = "unitsAvailable")
+    private Integer unitsAvailable;
 
+    @Enumerated(EnumType.STRING) // Use EnumType.STRING to store enum as a string
     @Column(name = "type")
-    private String type;
+    private ProductType type; // Change the type to ProductType enum
 
     @Column(name = "name")
     private String name;
